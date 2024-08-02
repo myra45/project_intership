@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\Hash;
 class AdminExtracurricularProfileController extends Controller
 {
     public function profile() {
-        $all_data = Admin::with('rExtracurricular')->get();
+        $user = Auth::guard('admin')->user();
+        $all_data = Admin::with('rExtracurricular')->findOrFail($user->id);
 
-        return view('admin_ekstrakulikuler.profile', compact('all_data'));
+        $extracurricularName = $all_data?->rExtracurricular?->extracurricular_name ?? 'Not Found';
+
+        return view('admin_ekstrakulikuler.profile', compact('all_data', 'extracurricularName'));
     }
 
     public function profile_submit(Request $request) {
