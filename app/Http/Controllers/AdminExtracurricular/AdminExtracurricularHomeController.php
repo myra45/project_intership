@@ -10,7 +10,7 @@ use App\Models\Extracurricular;
 class AdminExtracurricularHomeController extends Controller
 {
     public function index() {
-        $all_data = Extracurricular::orderBy('id', 'asc')->get();
+        $all_data = Extracurricular::orderBy('id', 'asc')->first();
 
         return view('admin_ekstrakulikuler.home',compact('all_data'));
     }

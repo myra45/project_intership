@@ -51,10 +51,7 @@
                                     <div class="mb-4">
                                         <label class="form-label">Ekstrakulikuler</label>
                                         <input type="text" name="extracurricular_name" class="form-control"
-                                            id="" value="">
-                                        {{-- Debugging: Tampilkan data yang diterima --}}
-                                        <pre>{{ print_r($all_data->toArray(), true) }}</pre>
-                                        <pre></pre>
+                                            id="" value="{{ $extracurricularName }}">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
