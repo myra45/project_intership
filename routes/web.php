@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\AdminExtracurricular\AdminExtracurricularHomeController;
 use App\Http\Controllers\AdminExtracurricular\AdminExtracurricularProfileController;
+use App\Http\Controllers\User\UserHomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -56,3 +58,8 @@ Route::get('admin/table', [AdminHomeController::class, 'table'])->name('admin_ta
 
 
 Route::get('confirmation-password', [AdminLoginController::class, 'confirmation_password'])->name('admin_confirmation_code');
+
+
+// USER
+Route::get('user/dashboard', [UserHomeController::class, 'index'])->name('user_dashboard');
+
