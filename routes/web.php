@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\AdminExtracurricular\AdminExtracurricularHomeController;
 use App\Http\Controllers\AdminExtracurricular\AdminExtracurricularProfileController;
+use App\Http\Controllers\AdminExtracurricular\PresensiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +42,12 @@ Route::prefix('admin')->group(function() {
   Route::middleware(['auth:admin','role:extracurricular_admin'])->group(function() 
   {
       Route::get('/extracurricular/home', [AdminExtracurricularHomeController::class, 'index'])->name('admin_extracurricular_home');
+      // Profile
       Route::get('/extracurricular/profile', [AdminExtracurricularProfileController::class, 'profile'])->name('admin_extracurricular_profile');
       Route::post('/extracurricular/profile-submit', [AdminExtracurricularProfileController::class, 'profile_submit'])->name('admin_extracurricular_profile_submit');
+      // Presensi
+      Route::get('/extracurricular/presensi', [PresensiController::class, 'index'])->name('admin_extracurricular_presensi');
+      Route::get('/extracurricular/form/presensi', [PresensiController::class, 'form'])->name('admin_extracurricular_presensi_form');
   });
 });
 
