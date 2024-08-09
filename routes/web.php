@@ -20,6 +20,7 @@ use App\Http\Controllers\User\UserHomeController;
 |
 */
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 // Admin 
