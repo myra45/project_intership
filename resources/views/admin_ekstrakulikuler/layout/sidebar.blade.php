@@ -13,7 +13,7 @@
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
                 <ul id="sidebarnav"
-                    {{ Request::is('admin/extracurricular/home') || Request::is('admin/extracurricular/profile') || Request::is('admin/form') || Request::is('admin/table') || Request::is('admin/forget-password') || Request::is('admin/confirmation-password') ? 'active' : '' }}>
+                    {{ Request::is('admin/extracurricular/home') || Request::is('admin/extracurricular/profile') || Request::is('admin/extracurricular/presensi') || Request::is('admin/table') || Request::is('admin/forget-password') || Request::is('admin/confirmation-password') ? 'active' : '' }}>
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Home</span>
@@ -36,7 +36,15 @@
                     </li>
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">UI COMPONENTS</span>
+                        <span class="hide-menu">User Manajement</span>
+                    </li>
+                    <li class="sidebar-item {{ Request::is('admin/extracurricular/presensi') ? 'active' : '' }}">
+                        <a class="sidebar-link" href="{{ route('admin_extracurricular_presensi') }}"">
+                            <span>
+                                <i class="ti ti-checkup-list"></i>
+                            </span>
+                            <span class="hide-menu">Presensi</span>
+                        </a>
                     </li>
                     <li class="sidebar-item {{ Request::is('admin/form') ? 'active' : '' }}">
                         <a class="sidebar-link" href="{{ route('admin_form') }}"">
