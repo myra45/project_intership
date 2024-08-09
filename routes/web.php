@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\AdminExtracurricular\AdminExtracurricularHomeController;
 use App\Http\Controllers\AdminExtracurricular\AdminExtracurricularProfileController;
+use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\SignUpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,3 +58,8 @@ Route::get('admin/table', [AdminHomeController::class, 'table'])->name('admin_ta
 
 
 Route::get('confirmation-password', [AdminLoginController::class, 'confirmation_password'])->name('admin_confirmation_code');
+
+Route::get('sign_up',
+[SignUpController::class,'sign_up'])->name('sign_up');
+
+Route::post('sign_up-submit', [SignUpController::class, 'sign_up_submit'])->name('sign_up_submit');
